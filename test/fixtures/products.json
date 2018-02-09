@@ -1,0 +1,106 @@
+{
+   "data":[
+      {
+         "id":"356",
+         "type":"fixed_term_products",
+         "links":{
+            "self":"http://internal-Savedo-Internal-awsdev-Web-ELB-1162833099.eu-west-1.elb.amazonaws.com/app/api/v1/fixed_term_products/356"
+         },
+         "attributes":{
+            "key":"jthr6",
+            "name":"J&T banka d.d. 6 Monate 0,3% p.a.",
+            "shortname":"jthr6-4",
+            "currency":"EUR",
+            "interest_rate":"0.3",
+            "term_in_months":6,
+            "maturity_text":"6 Monate",
+            "bank_shortname":"jthr",
+            "bank_name":"J&T banka d.d.",
+            "bank_country":"Kroatien",
+            "is_flexgeld":false,
+            "accept_video_ident":true,
+            "product_sheet_url":"https://product-sheets.s3-eu-west-1.amazonaws.com/DE/15.06.2017%20Produktblatt%20J%26T%20banka%20d.d..pdf",
+            "for_existing_target_party_customers":true,
+            "for_new_target_party_customers":true,
+            "for_existing_source_party_customers":true,
+            "for_new_source_party_customers":true,
+            "eligible_for_customer":true,
+            "available_for_automatic_rollover":false,
+            "interest_formula_name":"actual365fixed_capitalization1_round2",
+            "minimum_amount":"10000.0",
+            "maximum_amount":"100000.0",
+            "active_from":"2016-09-15T00:00:00.000+02:00",
+            "active_to":null,
+            "country_code":"DE"
+         }
+      },
+      {
+         "id":"430",
+         "type":"fixed_term_products",
+         "links":{
+            "self":"http://internal-Savedo-Internal-awsdev-Web-ELB-1162833099.eu-west-1.elb.amazonaws.com/app/api/v1/fixed_term_products/430"
+         },
+         "attributes":{
+            "key":"kent12",
+            "name":"KentBank d.d. 1 Jahr 0,6% p.a.",
+            "shortname":"kent12-6",
+            "currency":"EUR",
+            "interest_rate":"0.6",
+            "term_in_months":12,
+            "maturity_text":"1 Jahr",
+            "bank_shortname":"kent",
+            "bank_name":"KentBank d.d.",
+            "bank_country":"Kroatien",
+            "is_flexgeld":true,
+            "accept_video_ident":true,
+            "product_sheet_url":"https://product-sheets.s3-eu-west-1.amazonaws.com/DE/15.06.2017%20Produktblatt%20KentBank%20d.d..pdf",
+            "for_existing_target_party_customers":true,
+            "for_new_target_party_customers":true,
+            "for_existing_source_party_customers":true,
+            "for_new_source_party_customers":true,
+            "eligible_for_customer":true,
+            "available_for_automatic_rollover":false,
+            "interest_formula_name":"actualactual_capitalization1_truncate2",
+            "minimum_amount":"10000.0",
+            "maximum_amount":"100000.0",
+            "active_from":"2016-11-18T00:00:00.000+01:00",
+            "active_to":null,
+            "country_code":"DE"
+         }
+      },
+      {
+         "id":"431",
+         "type":"fixed_term_products",
+         "links":{
+            "self":"http://internal-Savedo-Internal-awsdev-Web-ELB-1162833099.eu-west-1.elb.amazonaws.com/app/api/v1/fixed_term_products/431"
+         },
+         "attributes":{
+            "key":"kent24",
+            "name":"KentBank d.d. 2 Jahre 0,7% p.a.",
+            "shortname":"kent24-6",
+            "currency":"EUR",
+            "interest_rate":"0.7",
+            "term_in_months":24,
+            "maturity_text":"2 Jahre",
+            "bank_shortname":"kent",
+            "bank_name":"KentBank d.d.",
+            "bank_country":"Kroatien",
+            "is_flexgeld":true,
+            "accept_video_ident":true,
+            "product_sheet_url":"https://product-sheets.s3-eu-west-1.amazonaws.com/DE/15.06.2017%20Produktblatt%20KentBank%20d.d..pdf",
+            "for_existing_target_party_customers":true,
+            "for_new_target_party_customers":true,
+            "for_existing_source_party_customers":true,
+            "for_new_source_party_customers":true,
+            "eligible_for_customer":true,
+            "available_for_automatic_rollover":false,
+            "interest_formula_name":"actualactual_capitalization1_truncate2",
+            "minimum_amount":"10000.0",
+            "maximum_amount":"100000.0",
+            "active_from":"2016-11-18T00:00:00.000+01:00",
+            "active_to":null,
+            "country_code":"DE"
+         }
+      }
+   ]
+}
