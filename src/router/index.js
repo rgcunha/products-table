@@ -9,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
-    },
-    {
-      path: '/products',
       name: 'Products',
       component: FilterableProductsTable,
+    },
+    {
+      path: '/hello',
+      name: 'HelloWorld',
+      component: HelloWorld,
     },
   ],
 });
