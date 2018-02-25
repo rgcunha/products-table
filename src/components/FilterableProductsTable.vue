@@ -8,26 +8,34 @@
 <script>
 import SearchBar from './SearchBar';
 import ProductsTable from './ProductsTable';
-import products from '../../test/fixtures/products.json';
+import FixedTermProduct from '../lib/api/resources/fixed-term-product';
 
 export default {
   name: 'FilterableProductsTable',
   components: { SearchBar, ProductsTable },
   data() {
     return {
-      products: products.data,
-      filteredProducts: products.data,
+      products: [],
+      filteredProducts: [],
     };
+  },
+  created() {
+    const fixedTermProduct = new FixedTermProduct({ countryCode: 'de' });
+    fixedTermProduct.getAll()
+      .then(([...products]) => {
+        this.products = products;
+        this.filteredProducts = products;
+      });
   },
   methods: {
     filterProducts({ investmentAmount, maturity }) {
       const isEligibleForMaturity = ((product) => {
         if (!maturity) { return true; }
-        return product.attributes.term_in_months === maturity;
+        return product.term_in_months === maturity;
       });
       const isEligibleForInvestmentAmount = (product =>
-        +investmentAmount >= +product.attributes.minimum_amount &&
-        +investmentAmount <= +product.attributes.maximum_amount
+        +investmentAmount >= +product.minimum_amount &&
+        +investmentAmount <= +product.maximum_amount
       );
 
       this.filteredProducts = this.products

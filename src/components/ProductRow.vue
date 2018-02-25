@@ -4,13 +4,13 @@
       {{ interestRateText }}
     </td>
     <td class="product-row__maturity">
-      {{ product.attributes.maturity_text }}
+      {{ product.maturity_text }}
     </td>
     <td class="product-row__bank">
-      {{ product.attributes.bank_name }}
+      {{ product.bank_name }}
     </td>
     <td class="product-row__country">
-      {{ product.attributes.bank_country }}
+      {{ product.bank_country }}
     </td>
     <td class="product-row__interest-income">
       {{ interestIncome }}
@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     interestRateText() {
-      return `${this.product.attributes.interest_rate}%`;
+      return `${this.product.interest_rate}%`;
     },
     interestIncome() {
       return 888;
