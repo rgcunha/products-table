@@ -1,5 +1,5 @@
 <template>
-  <a :href="url">{{ text }}</a>
+  <a :href='url'>{{ text }}</a>
 </template>
 
 <script>
@@ -18,7 +18,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+@import '../variables';
+
 a {
   display: inline-block;
   min-width: 120px;
@@ -28,7 +30,7 @@ a {
   border-radius: 5px;
   text-decoration: none;
   background-image: linear-gradient(to bottom, #3AA7FF 0, #1380D7 100%);
-  color: #FFF;
+  color: $primary-white;
   cursor: pointer;
   transition: color .2s ease-in-out;
 }

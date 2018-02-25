@@ -1,22 +1,22 @@
 <template>
-  <tr class="product-row">
-    <td class="product-row__interest_rate">
-      {{ interestRateText }}
+  <tr class='product-row'>
+    <td class='product-row__interest_rate'>
+      <span class='interest-rate'>{{ product.interest_rate }}</span>
     </td>
-    <td class="product-row__maturity">
+    <td class='product-row__maturity'>
       {{ product.maturity_text }}
     </td>
-    <td class="product-row__bank">
-      {{ product.bank_name }}
+    <td class='product-row__bank'>
+      <img :src='bankLogo' :alt='product.bank_name' />
     </td>
-    <td class="product-row__country">
+    <td class='product-row__country'>
       {{ product.bank_country }}
     </td>
-    <td class="product-row__interest-income">
-      {{ interestIncome }}
+    <td class='product-row__interest-income'>
+      <span class='interest-income'>{{ interestIncome }}</span>
     </td>
-    <td class="product-row__cta">
-      <Button :text="buttonText" :url="buttonUrl"></Button>
+    <td class='product-row__cta'>
+      <Button text='Jetzt anlegen' :url='buttonUrl'></Button>
     </td>
   </tr>
 </template>
@@ -34,14 +34,13 @@ export default {
     },
   },
   computed: {
-    interestRateText() {
-      return `${this.product.interest_rate}%`;
+    bankLogo() {
+      // eslint-disable-next-line
+      return require(`@/assets/images/banks/${this.product.bank_shortname}.svg`);
     },
     interestIncome() {
-      return 888;
-    },
-    buttonText() {
-      return 'Jetz anlegen';
+      // TODO: Calculate interest income dynamically
+      return '3,000';
     },
     buttonUrl() {
       const baseUrl = 'https://banking.savedo.de/#!/applications/fixed-term-deposits/new/personal-details';
@@ -56,8 +55,37 @@ export default {
 };
 </script>
 
-<style scoped>
-td {
-  padding: 10px 0;
+<style lang='scss' scoped>
+@import '../variables';
+
+tr { background-color: $primary-white; }
+td { padding: 15px; }
+
+.interest-rate {
+  font-size: 28px;
+  font-weight: 500;
+  &:after {
+    display: inline;
+    font-size: 20px;
+    margin-left: 4px;
+    content: '%';
+  }
+}
+
+.interest-income {
+  font-size: 22px;
+  font-weight: 500;
+  &:after {
+    display: inline;
+    margin-left: 4px;
+    content: '€';
+  }
+}
+
+.product-row__bank {
+  img {
+    width: 105px;
+    height: 60px;
+  }
 }
 </style>
