@@ -1,7 +1,7 @@
 /* eslint no-shadow: ["error", { "allow": ["state"] }] */
-
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { UPDATE_PRODUCTS, START_FETCHING, STOP_FETCHING } from './mutation-types';
 import FixedTermProduct from '../lib/api/resources/fixed-term-product';
 
 Vue.use(Vuex);
@@ -16,13 +16,13 @@ const getters = {
 };
 
 const mutations = {
-  updateProducts(state, products) {
+  [UPDATE_PRODUCTS](state, products) {
     state.products = products;
   },
-  startFetching(state) {
+  [START_FETCHING](state) {
     state.isFetching = true;
   },
-  stopFetching(state) {
+  [STOP_FETCHING](state) {
     state.isFetching = false;
   },
 };
@@ -30,13 +30,13 @@ const mutations = {
 const actions = {
   fetchProducts({ commit }) {
     const fixedTermProduct = new FixedTermProduct({ countryCode: 'de' });
-    commit('startFetching');
+    commit('START_FETCHING');
     return fixedTermProduct.getAll()
       .then(([...products]) => {
-        commit('updateProducts', products);
+        commit('UPDATE_PRODUCTS', products);
       })
       .finally(() => {
-        commit('stopFetching');
+        commit('STOP_FETCHING');
       });
   },
 };
