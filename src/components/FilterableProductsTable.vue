@@ -38,7 +38,7 @@ export default {
     filterProducts({ investmentAmount, maturity }) {
       const isEligibleForMaturity = ((product) => {
         if (!maturity) { return true; }
-        return product.term_in_months === maturity;
+        return product.term_in_months === +maturity;
       });
       const isEligibleForInvestmentAmount = (product =>
         +investmentAmount >= +product.minimum_amount &&

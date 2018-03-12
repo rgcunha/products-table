@@ -1,42 +1,47 @@
 <template>
   <div class='search-bar'>
     <div class='form-group'>
-      <label for='investmentAmount'>Anlagebetrag:</label>
-      <input
+      <Label for='investmentAmount'>Anlagebetrag:</Label>
+      <InputText
         id='investmentAmount'
-        type='text'
         v-model='searchParams.investmentAmount'
         @blur='publishSearchParamsUpdated'
       />
     </div>
     <div class='form-group'>
-      <label for='maturity'>Laufzeit:</label>
-      <select id='maturity' v-model='searchParams.maturity' @change='publishSearchParamsUpdated'>
-        <option v-for='option in maturityOptions' :value='option.value' :key='option.value'>
-          {{ option.text }}
-        </option>
-      </select>
+      <Label for='maturity'>Laufzeit:</Label>
+      <Select
+        id='maturity'
+        v-model='searchParams.maturity'
+        @change='publishSearchParamsUpdated'
+        :options='maturityOptions'
+      />
     </div>
   </div>
 </template>
 
 <script>
+import InputText from './InputText';
+import Select from './Select';
+import Label from './Label';
+
 const DEFAULT_SEARCH_PARAMS = {
   investmentAmount: '30000',
-  maturity: null,
+  maturity: '',
 };
 
 export default {
+  components: { InputText, Select, Label },
   name: 'SearchBar',
   data() {
     return {
       searchParams: { ...DEFAULT_SEARCH_PARAMS },
       maturityOptions: [
-        { text: 'Alle Angebote', value: null },
-        { text: '6 Monate', value: 6 },
-        { text: '9 Monate', value: 9 },
-        { text: '1 Jahr', value: 12 },
-        { text: '2 Jahre', value: 24 },
+        { text: 'Alle Angebote', value: '' },
+        { text: '6 Monate', value: '6' },
+        { text: '9 Monate', value: '9' },
+        { text: '1 Jahr', value: '12' },
+        { text: '2 Jahre', value: '24' },
       ],
     };
   },
@@ -57,31 +62,8 @@ export default {
   border: 1px solid $palette-grey-3;
   background-color: $primary-white;
 }
-
 .form-group {
   display: inline-block;
   width: 40%;
-}
-
-input[type=text], select {
-  background-color: $primary-white;
-  border: 1px solid $palette-grey-3;
-  border-radius: 3px;
-  padding: 0 8px;
-  font-size: 16px;
-  font-family: 'Avenir';
-}
-
-input[type=text] {
-  height: 36px;
-}
-
-select {
-  height: 38px;
-}
-
-label {
-  color: $palette-ash-grey-3;
-  margin-right: 30px;
 }
 </style>
