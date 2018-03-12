@@ -13,6 +13,14 @@ const state = {
 
 const getters = {
   productsCount: state => state.products.length,
+  maturityOptions: (state) => {
+    const maturityOptions = {};
+    state.products.forEach((product) => {
+      maturityOptions[product.term_in_months] = product.maturity_text;
+    });
+    maturityOptions[''] = 'Alle Angebote';
+    return maturityOptions;
+  },
 };
 
 const mutations = {

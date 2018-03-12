@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import InputText from './InputText';
 import Select from './Select';
 import Label from './Label';
@@ -36,19 +37,17 @@ export default {
   data() {
     return {
       searchParams: { ...DEFAULT_SEARCH_PARAMS },
-      maturityOptions: [
-        { text: 'Alle Angebote', value: '' },
-        { text: '6 Monate', value: '6' },
-        { text: '9 Monate', value: '9' },
-        { text: '1 Jahr', value: '12' },
-        { text: '2 Jahre', value: '24' },
-      ],
     };
   },
   methods: {
     publishSearchParamsUpdated() {
       this.$emit('searchParamsUpdated', this.searchParams);
     },
+  },
+  computed: {
+    ...mapGetters([
+      'maturityOptions',
+    ]),
   },
 };
 </script>
