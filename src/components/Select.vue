@@ -1,7 +1,7 @@
 <template>
   <select @input='publishInput' @change='publishChange' :value='value'>
-    <option v-for='option in options' :value='option.value' :key='option.value'>
-      {{ option.text }}
+    <option v-for='(value, key) in options' :value='key' :key='key'>
+      {{ value }}
     </option>
   </select>
 </template>
@@ -16,7 +16,7 @@ export default {
       default: '',
     },
     options: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },
