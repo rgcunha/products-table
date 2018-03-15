@@ -15,7 +15,7 @@ const processResponse = response => processBody(response.data);
 
 const sendRequest = ({ method, path, data = {}, queryParams = null }) => {
   const config = {
-    baseURL: 'https://api-dev.savedo.de/products/',
+    baseURL: 'https://api-staging.savedo.de/products/',
     headers: {
       'Content-Type': 'application/vnd.api+json',
     },
