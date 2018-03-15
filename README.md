@@ -2,6 +2,19 @@
 
 > Products Table Demo
 
+![](products-table.png)
+
+## Component Hierarchy
+
+* FilterableProductsTable
+  * SearchBar
+    * InputText
+    * Select
+  * ProductsTable
+   * ProductRow
+     * Button
+  * Loader
+
 ## Build Setup
 
 ``` bash
@@ -28,3 +41,9 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Roadmap
+
+[ ] Add unit tests
+[ ] Integrate interest calculator ( https://github.com/Savedo/interest-calculator-js )
+[ ] Implement product details
